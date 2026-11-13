@@ -2,61 +2,61 @@
     --color-theme: #866EFF;
     --color-main: #ffffff;
     --color-bg: #000000;
-    --font:"Satoshi-Medium";
+    --font: "Satoshi-Medium";
 }
 
 * {
-     box-sizing: border-box;
+    box-sizing: border-box;
+    user-select: none;
 }
 
 body {
     font-family: var(--font);
     background-color: var(--color-bg);
     color: var(--color-main);
-        margin:1.5rem;
+    margin: 1.5rem;
     font-size: 1.2rem;
-  }
+}
 
 .header {
     display: flex;
     flex-direction: column;
-    position: sticky; 
+    position: sticky;
     top: 0px;
-
     padding-top: 1rem;
+    padding-bottom: 0.5rem;
     background-color: var(--color-bg);
-    /* border: solid; */    
+    z-index: 10;
+
 }
 
+.header__menu__title {
+  
+}
 
 .header__menu__principal {
     display: flex;
     justify-content: space-between;
-    /* gap: 0rem; */
 }
 
-.header__menu__principal {
-    margin-bottom: 1.7rem;
-
-    background-color: #000000;
-    
-}
 .header__menu__nav {
     display: flex;
     gap: 1rem;
-    font-size:0.7rem;
-}
+    font-size: 0.7rem;
+    align-self: flex-end;
+}   
+
 .header__menu__nav li a {
     text-decoration: none;
     color: var(--color-main);
 }
 
 .header__page {
-    display:flex;
+    display: flex;
     justify-content: center;
     background-image: url("../ressources/images/hero-banner.png");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     min-height: 85vh;
     border-radius: 1rem;
@@ -64,7 +64,7 @@ body {
 }
 
 .header__page__text {
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -73,78 +73,173 @@ body {
 .header__page__title {
     font-size: 2.5rem;
     font-weight: bold;
-    padding: 0 0 1rem 0 ;
+    padding: 0 0 1rem 0;
 }
+
 .header__page__subtitle {
-   text-shadow: 0.1px .1px 0.1px black;
+    text-shadow: 0.1px .1px 0.1px black;
 }
 
 .color--theme {
     color: var(--color-theme);
 }
 
-.section__title  {
+.section__title {
+    /* display:flex; */
     font-size: 2rem;
     font-weight: bold;
     padding: 3rem;
     text-align: center;
 }
 
-.super__serv_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  /* max-width: 1170px; */
-  padding: 20px;
-  margin: 0 auto;
+.section__title::before,
+.section__title::after {
+    content: "\002013";
+    padding: 0 2rem 0 2rem;
+    color: var(--color-theme);
+}
 
+.super__serv_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    /* max-width: 1170px; */
+    padding: 20px;
+    margin: 0 auto;
 }
 
 .bento__super__serv {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap:0.5rem;
+    gap: 0.5rem;
     border: solid 1px var(--color-theme);
     border-radius: 1rem;
     text-align: center;
     padding: 1rem;
-    
+
+}
+
+.bento__super__serv--title {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+
 }
 
 .bento__super__serv--subtitle {
-text-transform: uppercase;
-font-size: 0.8rem;
-}
-.default__button {
-background-color: var(--color-theme);
-border-radius: 10px;
-font-size: 0.8rem;
-font-weight: bold;
-padding: 1rem;
-text-decoration: none;
-color:var(--color-main);
-}
-    
-
-em {
-    font-style: italic;
+    text-transform: uppercase;
     font-size: 0.6rem;
-    /* text-align: center; */
+    margin-bottom: 1rem;
+    line-height: 1rem;
+}
+
+.default__button {
+    background-color: var(--color-theme);
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.7rem;
+    text-decoration: none;
+    color: var(--color-main);
+    letter-spacing: 0.1rem;
+}
+
+.bento__super__serv--adding_info {
+    margin-top: 1.5rem;
+    font-family: "Satoshi-VariableItalic";
+    font-weight: 300;
+    font-size: 0.7rem;
+
 }
 
 .bento--super_demenagement {
     grid-row: span 2;
-    
 }
+
 .bento--livraison {
     grid-column: span 2;
 }
 
 .bento--sauvetage {
-     grid-row: span 2;
+    grid-row: span 2;
 }
+
 .bento--moral {
     grid-column: span 2;
+}
+
+.super__heros {
+    display: flex;
+    flex-direction: column;
+}
+
+.super__heros_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+
+}
+
+.bento__super__heros {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    height: 40vh;
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+
+.bento__super__heros--bgimage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+
+
+}
+
+.bento__super__heros--vignette {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: #00000067;
+    height: 40%;
+}
+
+.bento__super__heros--subtitle {
+    margin: 1rem;
+
+}
+
+.bento__super__heros--description {
+    font-family: "Satoshi-Variable";
+    font-weight: 300;
+    font-size: 0.7rem;
+    line-height: 1rem;
+
+}
+
+.bento__super__heros--description-hidden {
+    font-size: 0.5rem;
+    font-weight: normal;
+    display: none;
+}
+
+.super__heros__button {
+    margin-top: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.super__heros__button a {
+    font-size: 0.5rem;
 }
