@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/satoshi.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preload" href="/assets/fonts/PassengerSans-Variable.e7fbe7bf.woff2" as="font" type="font/woff2"
@@ -13,9 +14,9 @@
 
 <body>
     <header class="header">
-        <nav class="menu__principal">
-            <h2 class="menu__title">Heros League</h1>
-                <ul>
+        <nav class="header__menu__principal">
+            <h2 class="header__menu__title">Heros League</h1>
+                <ul class="header__menu__nav">
                     <li><a href="#">Services</a> </li>
                     <li><a href="#">Nos Héros</a></li>
                     <li><a href="#">Témoignages</a></li>
@@ -23,8 +24,11 @@
                 </ul>
         </nav>
         <div class="header__page">
-            <h1 class="header__page__title">Heros League</h1>
-            <p class="header__page__subtitle">Des gens un peu spéciaux, pour des problèmes pas tout à fait normaux</p>
+            <div class="header__page__text">
+                <h1 class="header__page__title">Heros League</h1>
+                <p class="header__page__subtitle">Des gens un peu spéciaux, pour des problèmes pas tout à fait normaux
+                </p>
+            </div>
         </div>
     </header>
     <main>
@@ -33,58 +37,66 @@
              *************************************************** -->
 
         <section class="super__serv">
-            <h2>- Nos <span class="color--theme">supers</span> Services -</h2>
-            <div class="bento__super__serv bento--super_demenagement">
-                <h3 class="bento__super__serv--title color--theme">Super Déménagement</h3>
-                <p class="bento__super__serv--title--subtitle">Pour des déménagements sans effort et sans casse* !</p>
-                <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 233 €</a>
-                <p class="bento__super__serv--title--adding_info"><em>* Nous ne pouvons malheureusement pas garantir que
-                        vos objets fragiles
-                        ou votre chat Gribouille
-                        survivront à un combat épique entre super-vilains lors du trajet.</em></p>
+            <h2><span class="color--theme">-</span> Nos <span class="color--theme">supers</span> Services <span class="color--theme">-</span></h2>
+            <div class="super__serv_container">
+                <div class="bento__super__serv bento--super_demenagement">
+                    <h3 class="bento__super__serv--title color--theme">Super Déménagement</h3>
+                    <p class="bento__super__serv--title--subtitle">Pour des déménagements sans effort et sans casse* !
+                    </p>
+                    <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 233 €</a>
+                    <p class="bento__super__serv--title--adding_info"><em>* Nous ne pouvons malheureusement pas garantir
+                            que
+                            vos objets fragiles
+                            ou votre chat Gribouille
+                            survivront à un combat épique entre super-vilains lors du trajet.</em></p>
 
-            </div>
-            <div class="bento__super__serv--title bento--livraison">
-                <h3 class="bento__title color--theme">Livraison de Repas</h3>
-                <p class="bento__super__serv--title--subtitle">Pour des livraisons super-soniques*</p>
-                <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 12 €</a>
-                <p class="bento__super__serv--title--adding_info"><em>* Pour éviter tout dommage à votre porte, merci de
-                        la laisser ouverte,
-                        certains super-héros n'ont pas
-                        conscience de
-                        leur force. Vous pouvez souscrire à notre assurance Porte en vrac pour 5 € de plus.</em></p>
-            </div>
-            <div class="bento__super__serv bento--zhero">
-                <h3 class="bento__super__serv--title color--theme">Z'héro Bouchons</h3>
-                <p class="bento__super__serv--title--subtitle">Pour les clients pressés !*</p>
-                <a class="bento__super__serv--titlebutton button_theme" href="">1,33 €/km</a>
-                <p class="bento__super__serv--title--adding_info"><em>* Le mode de déplacement peut être différent en
-                        fonction de la
-                        disponibilité des héros. Merci de préciser à
-                        la
-                        commande si vous avez le mal des transports soniques.</em></p>
-            </div>
-            <div class="bento__super__serv bento--sauvetage">
-                <h3 class="bento__super__serv--title color--theme">Sauvetage de soirée</h3>
-                <p class="bento__super__serv--subtitle">Pour les soirées booooring !</p>
-                <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 50 €/h</a>
-                <p class="bento__super__serv--adding_info"><em>* Nous ne pouvons malheureusement pas garantir que votre
-                        super-héros
-                        ne se fera pas la malle si la soirée
-                        n'est pas
-                        sauvable.</em></p>
-            </div>
-            <div class="bento__super__serv bento--moral">
-                <h3 class="bento__super__serv--title color--theme">Moral à Z'héro</h3>
-                <p class="bento__super__serv--subtitle">Pour les jours gris et les cœurs lourds, des héros au moral
-                    d'acier.*</p>
-                <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 100 €</a>
-                <p class="bento__super__serv--adding_info"><em>* Il peut arriver que le moral de votre héros ne soit pas
-                        au beau fixe
-                        et
-                        vous bassine avec sa défaite de la
-                        veille,
-                        dans ce cas, nous vous remboursons 50 % de la prestation.</em></p>
+                </div>
+                <div class="bento__super__serv bento--livraison">
+                    <h3 class="bento__super__serv__title color--theme">Livraison de Repas</h3>
+                    <p class="bento__super__serv--title--subtitle">Pour des livraisons super-soniques*</p>
+                    <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 12 €</a>
+                    <p class="bento__super__serv--title--adding_info"><em>* Pour éviter tout dommage à votre porte,
+                            merci de
+                            la laisser ouverte,
+                            certains super-héros n'ont pas
+                            conscience de
+                            leur force. Vous pouvez souscrire à notre assurance Porte en vrac pour 5 € de plus.</em></p>
+                </div>
+                <div class="bento__super__serv bento--zhero">
+                    <h3 class="bento__super__serv--title color--theme">Z'héro Bouchons</h3>
+                    <p class="bento__super__serv--title--subtitle">Pour les clients pressés !*</p>
+                    <a class="bento__super__serv--titlebutton button_theme" href="">1,33 €/km</a>
+                    <p class="bento__super__serv--title--adding_info"><em>* Le mode de déplacement peut être différent
+                            en
+                            fonction de la
+                            disponibilité des héros. Merci de préciser à
+                            la
+                            commande si vous avez le mal des transports soniques.</em></p>
+                </div>
+                <div class="bento__super__serv bento--sauvetage">
+                    <h3 class="bento__super__serv--title color--theme">Sauvetage de soirée</h3>
+                    <p class="bento__super__serv--subtitle">Pour les soirées booooring !</p>
+                    <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 50 €/h</a>
+                    <p class="bento__super__serv--adding_info"><em>* Nous ne pouvons malheureusement pas garantir que
+                            votre
+                            super-héros
+                            ne se fera pas la malle si la soirée
+                            n'est pas
+                            sauvable.</em></p>
+                </div>
+                <div class="bento__super__serv bento--moral">
+                    <h3 class="bento__super__serv--title color--theme">Moral à Z'héro</h3>
+                    <p class="bento__super__serv--subtitle">Pour les jours gris et les cœurs lourds, des héros au moral
+                        d'acier.*</p>
+                    <a class="bento__super__serv--titlebutton button_theme" href="">À partir de 100 €</a>
+                    <p class="bento__super__serv--adding_info"><em>* Il peut arriver que le moral de votre héros ne soit
+                            pas
+                            au beau fixe
+                            et
+                            vous bassine avec sa défaite de la
+                            veille,
+                            dans ce cas, nous vous remboursons 50 % de la prestation.</em></p>
+                </div>
             </div>
         </section>
 
@@ -245,7 +257,7 @@
                 </div>
                 <div class="form--contact">
                     <label for="message">Message</label>
-                    <input type="textarea" name="message"  id="message"/>
+                    <input type="textarea" name="message" id="message" />
                 </div>
                 <div class="form--contact">
                     <input type="submit" value="Envoyer" />
@@ -253,7 +265,7 @@
             </form>
     </main>
     <footer class="footer">
-       <nav class="footer__nav">
+        <nav class="footer__nav">
             <h2 class="footer__nav--title">Heros League</h1>
                 <ul>
                     <li><a href="#">Services</a> </li>
@@ -262,7 +274,7 @@
                     <li><a href="#">Sauvez-moi !</a></li>
                 </ul>
         </nav>
-    <p class="footer_text">© 2024 Heros League - Tous droits réservés</p> 
+        <p class="footer_text">© 2024 Heros League - Tous droits réservés</p>
     </footer>
 </body>
 
