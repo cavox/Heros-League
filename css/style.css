@@ -1,5 +1,11 @@
+/* 
+####################
+###### INIT ########
+####################
+*/
 :root {
-    --color-theme: #866EFF;
+    --color-theme: #8486D9;
+    --color-theme-lighter: #A9ABF24D;
     --color-main: #ffffff;
     --color-bg: #000000;
     --font: "Satoshi-Medium";
@@ -14,10 +20,42 @@ body {
     font-family: var(--font);
     background-color: var(--color-bg);
     color: var(--color-main);
-    margin: 1.5rem;
+    margin: 0 1.5rem;
     font-size: 1.2rem;
 }
 
+.color--theme {
+    color: var(--color-theme);
+}
+
+.default__button {
+    background-color: var(--color-theme);
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.7rem;
+    text-decoration: none;
+    color: var(--color-main);
+    letter-spacing: 0.1rem;
+    transition: transform 400ms;
+
+    &:hover {
+        transform: scale(1.15);
+        background-color: #866eff94;
+    }
+}
+
+em {
+    font-family: "Satoshi-VariableItalic";
+    font-weight: 300;
+    font-size: 0.7rem;
+}
+
+/* 
+######################
+####### HEADER #######
+######################
+*/
 .header {
     display: flex;
     flex-direction: column;
@@ -30,10 +68,6 @@ body {
 
 }
 
-.header__menu__title {
-  
-}
-
 .header__menu__principal {
     display: flex;
     justify-content: space-between;
@@ -44,7 +78,7 @@ body {
     gap: 1rem;
     font-size: 0.7rem;
     align-self: flex-end;
-}   
+}
 
 .header__menu__nav li a {
     text-decoration: none;
@@ -58,7 +92,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 85vh;
+    min-height: 100vh;
     border-radius: 1rem;
 
 }
@@ -80,12 +114,13 @@ body {
     text-shadow: 0.1px .1px 0.1px black;
 }
 
-.color--theme {
-    color: var(--color-theme);
-}
+/* 
+######################
+####### TITRE  #######
+######################
+*/
 
 .section__title {
-    /* display:flex; */
     font-size: 2rem;
     font-weight: bold;
     padding: 3rem;
@@ -98,6 +133,12 @@ body {
     padding: 0 2rem 0 2rem;
     color: var(--color-theme);
 }
+
+/* 
+#######################################
+####### Section Super Services  #######
+#######################################
+*/
 
 .super__serv_container {
     display: grid;
@@ -134,25 +175,10 @@ body {
     font-size: 0.6rem;
     margin-bottom: 1rem;
     line-height: 1rem;
-}
-
-.default__button {
-    background-color: var(--color-theme);
-    border-radius: 0.8rem;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 0.7rem;
-    text-decoration: none;
-    color: var(--color-main);
-    letter-spacing: 0.1rem;
-}
-
-.bento__super__serv--adding_info {
     margin-top: 1.5rem;
-    font-family: "Satoshi-VariableItalic";
-    font-weight: 300;
-    font-size: 0.7rem;
-
+}
+.bento__super__serv--button {
+    margin-bottom: 1rem;
 }
 
 .bento--super_demenagement {
@@ -170,6 +196,12 @@ body {
 .bento--moral {
     grid-column: span 2;
 }
+
+/* 
+#######################################
+####### Section Super Heros  #######
+#######################################
+*/
 
 .super__heros {
     display: flex;
@@ -192,7 +224,6 @@ body {
     height: 40vh;
     border-radius: 1rem;
     overflow: hidden;
-
 }
 
 .bento__super__heros--bgimage {
@@ -208,8 +239,12 @@ body {
 }
 
 .bento__super__heros--vignette {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+    font-family: "Satoshi-Variable";
+    font-weight: 300;
     text-align: center;
-    position: relative;
     z-index: 1;
     background-color: #00000067;
     height: 40%;
@@ -217,29 +252,87 @@ body {
 
 .bento__super__heros--subtitle {
     margin: 1rem;
+    font-size: 1rem;
+}
+
+.bento__super__heros__description_container {
+    position: relative;
 
 }
 
 .bento__super__heros--description {
-    font-family: "Satoshi-Variable";
-    font-weight: 300;
-    font-size: 0.7rem;
-    line-height: 1rem;
-
+    opacity: 1;
+    transition: opacity 400ms ease;
 }
 
 .bento__super__heros--description-hidden {
-    font-size: 0.5rem;
-    font-weight: normal;
-    display: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+.bento__super__heros--vignette:hover .bento__super__heros--description {
+    opacity: 0;
+}
+
+.bento__super__heros--vignette:hover .bento__super__heros--description-hidden {
+    opacity: 1;
 }
 
 .super__heros__button {
+    font-size: 0.5rem;
     margin-top: 2rem;
-    text-align: center;
+    width: auto;
+    align-self: center;
     text-transform: uppercase;
 }
 
-.super__heros__button a {
-    font-size: 0.5rem;
+/* 
+#######################################
+######### Section Temoignages #########
+#######################################
+*/
+
+
+.temoignage__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:2rem;
+
+}
+
+.temoignage--card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--color-theme);
+    border-radius: 50rem 50rem 10rem 10rem;
+    /* padding: 0.5rem; */
+    
+}
+
+.temoignage--img_ctn {
+    border: solid 0.5rem;
+    border-color: var(--color-theme-lighter);
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.temoignage--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   /* object-position: center; */
+}
+
+.temoignage--pseudo {
+    margin: 1rem;
+}
+
+.temoignage--adding_info {
+    padding: 0.5rem;
 }
