@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Heros League</title>
     <link rel="stylesheet" href="./css/satoshi.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <nav class="header__menu__principal">
-            <h2 class="header__menu__title">Heros League</h1>
+            <h2 class="header__menu__title"><a href="#header__page">Heros League</a></h1>
                 <ul class="header__menu__nav">
                     <li><a href="#services">Services</a> </li>
                     <li><a href="#heros">Nos Héros</a></li>
@@ -23,7 +23,7 @@
         </nav>
     </header>
     <main>
-        <div class="header__page">
+        <div id="header__page" class="header__page">
             <div class="header__page__text">
                 <h1 class="header__page__title">Heros League</h1>
                 <p class="header__page__subtitle">Des gens un peu spéciaux, pour des problèmes pas tout à fait normaux
@@ -276,18 +276,18 @@
              *************************************************** -->
         <section id="contact" class="contact">
             <h2 class="section__title">Sauvez-moi !</h2>
-            <form action="" method="get" class="form-contact">
+            <form action="" method="get" class="form__contact">
                 <div class="form--contact">
                     <label for="name">Nom</label>
-                    <input type="text" name="name" autocomplete="name" id="name" required />
+                    <input class="form--text" type="text" name="name" autocomplete="family-name" id="name" required />
                 </div>
                 <div class="form--contact">
                     <label for="email">Email</label>
-                    <input type="email" name="email" autocomplete="email" id="email" required />
+                    <input class="form--text" type="email" name="email" autocomplete="email" id="email" required />
                 </div>
                 <div class="form--contact">
                     <label for="service">Service</label>
-                    <select name="service" id="service">
+                    <select class="form--text" name="service" id="service">
                         <option value="demenagement">Super Déménagement</option>
                         <option value="livraison">Livraison de Repas</option>
                         <option value="zhero">Z'héro Bouchons</option>
@@ -297,24 +297,25 @@
                 </div>
                 <div class="form--contact">
                     <label for="message">Message</label>
-                    <input type="textarea" name="message" id="message" />
+                    <input class="form--textarea" type="textarea" name="message" id="message" />
                 </div>
                 <div class="form--contact">
-                    <input type="submit" value="Envoyer" />
+                    <input class="form--btn default__button" type="submit" value="Envoyer" />
                 </div>
             </form>
     </main>
     <footer class="footer">
+        <a class="footer__nav--title" href="#header__page">Heros League</a>
         <nav class="footer__nav">
-            <h2 class="footer__nav--title">Heros League</h1>
-                <ul>
+         
+                <ul class="footer__nav--menu">
                     <li><a href="#services">Services</a> </li>
                     <li><a href="#heros">Nos Héros</a></li>
                     <li><a href="#temoignage">Témoignages</a></li>
                     <li><a href="#contact">Sauvez-moi !</a></li>
                 </ul>
         </nav>
-        <p class="footer_text">© 2024 Heros League - Tous droits réservés</p>
+        <p class="footer__text">© 2024 Heros League - Tous droits réservés</p>
     </footer>
 </body>
 
