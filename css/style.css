@@ -8,6 +8,7 @@
     --color-theme2: #a29bfe8c;
     --color-main: #ffffff;
     --color-bg: #000000;
+    --color-bgtransparent: #00000086;
     --color-bgform: #4D4D4D;
     --font: "Satoshi-Medium";
 }
@@ -22,12 +23,9 @@ body {
     background-color: var(--color-bg);
     color: var(--color-main);
     margin: 0 auto;
-    font-size: 1.2rem;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
     max-width: 1170px;
 }
-
-
 
 .color--theme {
     color: var(--color-theme);
@@ -53,7 +51,7 @@ body {
 em {
     font-family: "Satoshi-VariableItalic";
     font-weight: 300;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 /* 
@@ -68,7 +66,7 @@ em {
     top: 0px;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
-    background-color: var(--color-bg);
+    background-color: var(--color-bgtransparent);
     z-index: 10;
 
 }
@@ -88,11 +86,18 @@ em {
     gap: 1rem;
     font-size: 0.7rem;
     align-self: flex-end;
+    padding-right: 0.5rem;
 }
 
 .header__menu__nav li a {
     text-decoration: none;
     color: var(--color-main);
+
+}
+
+a:hover,
+.header__menu__nav li a:hover {
+    color: var(--color-theme);
 }
 
 .header__page {
@@ -133,15 +138,21 @@ em {
 .section__title {
     font-size: 2rem;
     font-weight: bold;
-    padding: 3rem;
+    padding: 3rem 0;
     text-align: center;
-}
 
-.section__title::before,
-.section__title::after {
-    content: "\002013";
-    padding: 0 2rem 0 2rem;
-    color: var(--color-theme);
+    &::before {
+        content: "\002013";
+        padding: 0 2rem 0 0;
+        color: var(--color-theme);
+    }
+
+    &::after {
+        content: "\002013";
+        padding: 0 0 0 2rem;
+        color: var(--color-theme);
+    }
+
 }
 
 /* 
@@ -149,13 +160,12 @@ em {
 ####### Section Super Services  #######
 #######################################
 */
-
 .super__serv_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    padding: 20px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .bento__super__serv {
@@ -163,19 +173,16 @@ em {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    text-align: center;
     border: solid 1px var(--color-theme);
     border-radius: 1rem;
-    text-align: center;
+    gap: 0.5rem;
     padding: 1rem;
-
 }
 
 .bento__super__serv--title {
-    margin-bottom: 0rem;
     font-weight: bold;
     letter-spacing: 0.05rem;
-
 }
 
 .bento__super__serv--subtitle {
@@ -183,7 +190,7 @@ em {
     font-size: 0.6rem;
     margin-bottom: 1rem;
     line-height: 1rem;
-    margin-top: 1.5rem;
+    letter-spacing: 0.05rem;
 }
 
 .bento__super__serv--button {
@@ -215,24 +222,29 @@ em {
 .super__heros {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .super__heros_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    height: 100%;
     gap: 0.5rem;
-
 }
 
 .bento__super__heros {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
-    height: 40vh;
     border-radius: 1rem;
     overflow: hidden;
+
+    &:hover {
+        .bento__super__heros--description-hidden {
+            opacity: 1;
+        }
+    }
 }
 
 .bento__super__heros--bgimage {
@@ -243,8 +255,6 @@ em {
     width: 100%;
     object-fit: cover;
     z-index: 0;
-
-
 }
 
 .bento__super__heros--vignette {
@@ -256,38 +266,29 @@ em {
     text-align: center;
     z-index: 1;
     background-color: #00000067;
-    height: 40%;
+
+
 }
 
-.bento__super__heros--subtitle {
+.bento__super__heros--name {
     margin: 1rem;
     font-size: 1rem;
-}
-
-.bento__super__heros__description_container {
-    position: relative;
-
-}
-
-.bento__super__heros--description {
-    opacity: 1;
-    transition: opacity 400ms ease;
+    font-weight: bold;
 }
 
 .bento__super__heros--description-hidden {
     position: absolute;
+    font-family: "Satoshi-VariableItalic";
+    font-weight: 300;
+    font-size: 0.9rem;
     width: 100%;
-    top: 0;
+    top: 0px;
+    left: 0px;
+    padding: 1rem;
+    background: rgb(from var(--color-theme) r g b / 80%);
+    line-height: 1rem;
     opacity: 0;
-    transition: opacity 400ms ease;
-}
-
-.bento__super__heros--vignette:hover .bento__super__heros--description {
-    opacity: 0;
-}
-
-.bento__super__heros--vignette:hover .bento__super__heros--description-hidden {
-    opacity: 1;
+    transition: opacity 1s ease;
 }
 
 .super__heros__button {
@@ -303,7 +304,9 @@ em {
 ######### Section Temoignages #########
 #######################################
 */
-
+.temoignage {
+    height: 100vh;
+}
 
 .temoignage__container {
     display: grid;
@@ -343,7 +346,7 @@ em {
 }
 
 .temoignage--adding_info {
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
 }
 
 /* 
@@ -351,7 +354,6 @@ em {
 ######### Contact #########
 #######################################
 */
-.contact {}
 
 .form__contact {
     width: 40%;
@@ -381,6 +383,12 @@ label {
     padding: 0 0 0 0.5rem;
 }
 
+.form--text:focus,
+.form--textarea:focus {
+    outline: 2px solid var(--color-theme);
+
+}
+
 .form--textarea {
     height: 10rem;
 }
@@ -398,7 +406,7 @@ label {
 */
 .footer {
     /* border: 1px solid; */
-        font-family: "Satoshi-Variable";
+    font-family: "Satoshi-Variable";
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -419,14 +427,163 @@ label {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 2rem;
-    font-size: 0.6rem; 
+    font-size: 0.6rem;
 }
+
 .footer__text {
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     padding-bottom: 1rem;
 }
+
 .footer__nav--menu a {
     text-decoration: none;
     font-size: 0.8rem;
     color: var(--color-main);
+}
+
+.footer__nav--menu a:hover {
+    font-weight: bold;
+}
+
+/* Desktop */
+@media screen and (max-width: 1199px) {
+    /* body {
+        width: 100%;
+        padding: 0 20px;
+    } */
+}
+
+/* Tablette */
+@media screen and (max-width: 768px) {
+
+    /***********  Section Super Services **************/
+    .super__serv_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bento--super_demenagement {
+        grid-row: span 1;
+    }
+
+    .bento--livraison {
+        grid-column: span 1;
+    }
+
+    .bento--sauvetage {
+        grid-row: span 1;
+    }
+
+    .bento--moral {
+        grid-column: span 2;
+    }
+
+    /***********  Section Super Heros **************/
+    .super__heros_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 100%;
+        gap: 0.5rem;
+    }
+
+    .bento__super__heros {
+        aspect-ratio: 1 / 0.6;
+    }
+
+    /***********  Section Temoignages **************/
+    .temoignage {
+        height: auto;
+    }
+
+    .temoignage__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+    }
+
+
+}
+
+/* Mobile */
+@media screen and (max-width: 575px) {
+
+    /*********** Global Section **************/
+    .section__title {
+        font-size: 1rem;
+
+        &::before {
+            content: "\002013";
+            padding: 0 1rem 0 0;
+            color: var(--color-theme);
+        }
+
+        &::after {
+            content: "\002013";
+            padding: 0 0 0 1rem;
+            color: var(--color-theme);
+        }
+    }
+
+    /***********  Section Super Services **************/
+
+    .super__serv_container {
+        grid-template-columns: 1fr;
+    }
+
+    .bento--super_demenagement {
+        grid-row: span 1;
+    }
+
+    .bento--livraison {
+        grid-column: span 1;
+    }
+
+    .bento--sauvetage {
+        grid-row: span 1;
+    }
+
+    .bento--moral {
+        grid-column: span 1;
+    }
+
+    /***********  Section Super Heros **************/
+
+
+    .super__heros {
+        height: 100%;
+    }
+
+    .bento__super__heros {
+        aspect-ratio: 1 / 0.6;
+    }
+
+    .super__heros_container {
+        grid-template-columns: 1fr;
+        height: 100%;
+        gap: 1rem;
+    }
+
+    /***********  Section Temoignages **************/
+    .temoignage {
+        height: auto;
+    }
+
+    .temoignage__container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+    }
+
+    .temoignage--img_ctn {
+    border-radius: 10% 10% 50% 50%;
+    }
+
+    /***********  Section contact + footer **************/
+    .form__contact {
+        width: 100%;
+    }
+
+    .footer__nav--menu {
+        flex-direction: column;
+        align-items: center;
+    }
 }
