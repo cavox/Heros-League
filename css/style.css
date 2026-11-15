@@ -445,13 +445,14 @@ label {
     font-weight: bold;
 }
 
-/* Desktop */
-@media screen and (max-width: 1199px) {
-    /* body {
-        width: 100%;
-        padding: 0 20px;
-    } */
+/* Grand ecran */
+@media screen and (min-width: 1200px) {
+    .temoignage {
+        height: 100%;
+    }
+
 }
+
 
 /* Tablette */
 @media screen and (max-width: 768px) {
@@ -529,9 +530,11 @@ label {
         align-items: center;
 
     }
-.header__menu__title {
-    padding: 0.2rem;
-}
+
+    .header__menu__title {
+        padding: 0.2rem;
+    }
+
     .header__menu__nav {
         align-self: center;
     }
